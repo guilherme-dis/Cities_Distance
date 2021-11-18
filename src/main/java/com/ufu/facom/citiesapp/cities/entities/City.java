@@ -28,7 +28,6 @@ public class City {
 
 
 
-    // 2nd
     @Type(type = "point")
     @Column(name = "lat_lon", updatable = false, insertable = false)
     private Point location;

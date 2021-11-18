@@ -28,9 +28,9 @@ public class CountryResource {
     @GetMapping("/{id}")
     public ResponseEntity getOne(@PathVariable Long id) {
         Optional<Country> optional = repository.findById(id);
-        if(optional.isPresent()){
+        if (optional.isPresent())
             return ResponseEntity.ok().body(optional.get());
-        }else
+        else
             return ResponseEntity.notFound().build();
 
     }

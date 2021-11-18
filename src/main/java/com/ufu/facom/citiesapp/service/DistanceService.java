@@ -1,16 +1,8 @@
-package com.ufu.facom.citiesapp.cities.service;
-
-
-import static java.lang.Math.atan2;
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
-import static java.lang.Math.sqrt;
-import static java.lang.Math.toRadians;
+package com.ufu.facom.citiesapp.service;
 
 
 import java.util.Arrays;
 import java.util.List;
-
 import com.ufu.facom.citiesapp.cities.entities.City;
 import com.ufu.facom.citiesapp.cities.repositories.CityRepository;
 import org.slf4j.Logger;
@@ -32,6 +24,8 @@ public class DistanceService {
         log.info("nativePostgresInMiles({}, {})", city1, city2);
         return cityRepository.distanceByPoints(city1, city2);
     }
+
+
 
     public Double distanceByCubeInMeters(Long city1, Long city2) {
         log.info("distanceByCubeInMeters({}, {})", city1, city2);
