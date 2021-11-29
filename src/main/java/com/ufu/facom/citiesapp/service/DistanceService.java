@@ -1,14 +1,15 @@
 package com.ufu.facom.citiesapp.service;
 
 
-import java.util.Arrays;
-import java.util.List;
 import com.ufu.facom.citiesapp.cities.entities.City;
 import com.ufu.facom.citiesapp.cities.repositories.CityRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class DistanceService {
@@ -25,7 +26,9 @@ public class DistanceService {
         return cityRepository.distanceByPoints(city1, city2);
     }
 
-
+    public Long findByName(String name){
+        return cityRepository.findByName(name).getId();
+    }
 
     public Double distanceByCubeInMeters(Long city1, Long city2) {
         log.info("distanceByCubeInMeters({}, {})", city1, city2);
